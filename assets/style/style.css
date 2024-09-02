@@ -1,1 +1,26 @@
 /* BASIC STYLES HERE */
+body {
+    background-color: rgb(40, 37, 70);
+}
+
+label {
+    display: block;
+}
+
+textarea {
+    height: 40vh;
+    width: 100%;
+}
+
+.card-body {
+    background-color: rgb(138, 60, 211);
+}
+
+.card-size {
+    height: 51rem;
+}
+
+.note-img {
+    height: 30rem;
+    width: 100%;
+}

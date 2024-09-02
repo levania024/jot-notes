@@ -12,7 +12,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
-  <title>jot-notes</title>
+  <title>Jot Notes</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
       <a class="navbar-brand" href="#">
         <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
           loading="lazy">
-        <span class="ml-2">jot-notes</span>
+        <span class="ml-2">Jot Notes</span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +40,79 @@
 
   <!-- SECTION -->
   <main>
-      <!-- <section id="router-view"></section> -->
+    <!-- NOTE title of the page -->
+    <div class="container">
+      <section class="row">
+        <div class="col-md-4 mt-4 text-light">
+          <div class="card">
+            <div class="card-body card-size">
+              <div class="row">
+                <h1>Jot...</h1>
+                <div class="col-12 text-end">
+                  <span id="note-length"></span> Jots
+                </div>
+              </div>
+              <!-- NOTE the form with a color option -->
+              <section class="row">
+                <div class="col-12">
+                  <h2 class="text-light mb-3"></h2>
+                  <div class="mb-3">
+                    <form onsubmit="app.JotsController.createJot()">
+                      <label class="mt-3 mb-3 fs-3" for="color">Add a Jot</label>
+                      <select id="color" class="mb-3 p-1" name="color" required>
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                        <option value="purple">Purple</option>
+                        <option value="yellow">Yellow</option>
+                      </select>
+                      <input class="" type="text" name="name" id="name" minlength="3" maxlength="15" required
+                        placeholder="title" autocomplete="off">
+                      <button type="submit" class="btn btn-primary">Create +</button>
+                    </form>
+                  </div>
+                </div>
+              </section>
+
+              <!-- NOTE the note list -->
+              <div id="jot-note" class="col-12 mt-4 mb-3">
+                <!-- <div class="">
+                  <h2>Jot with a data </h2>
+                  <text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, accusamus repellat atque
+                    eveniet totam dolore!</text>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOTE the textarea and the main body of the page -->
+        <div class="col-md-8 col-12 mt-4">
+          <div class="card">
+            <div id="Jot-created-Note" class="card-body card-size text-light">
+              <img class="img-fluid note-img" src="img/photo-1456324504439-367cee3b3c32-removebg-preview.png" alt="">
+              <p class="text-center justify-content-center">
+                Create or select a Jot to Start Jotting
+              </p>
+              <!-- <div class="mt-3">
+                <h2>Name</h2>
+                <p>Date Created on: <span></span> </p>
+                <p>Last updated: <span></span></p>
+                <div class="d-flex justify-content-end mb-3">
+                  <button class="btn btn-danger mx-3"><i class="mdi mdi-delete"></i> Delete</button>
+                  <button class="btn btn-success"> <i class="mdi mdi-arrow-down-bold-box"></i> Save</button>
+                </div>
+              </div>
+    
+              <div class="d-flex">
+                <textarea name="body"
+                  id="body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat tempora provident, cum unde debitis, velit tempore minima odio eos temporibus ab excepturi rerum recusandae dolorum incidunt qui, iure voluptatum autem.</textarea>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
 
   <!-- SECTION -->
