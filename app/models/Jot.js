@@ -8,6 +8,7 @@ export class Jot {
         this.body = data.body || ''
         this.color = data.color
         this.lastAccessedAt = data.lastAccessedAt == undefined ? new Date() : new Date(data.lastAccessedAt)
+        this.createAt = data.createAt == undefined ? new Date() : new Date(data.createAt)
     }
 
     // NOTE the list of note with the color and the body of the text
@@ -17,7 +18,7 @@ export class Jot {
         role="button" style="border-left: 5px solid ${this.color}; padding-left: 10px;">
             <div class="d-flex justify-content-between align-items-center">
                 <h4 class="mb-0">${this.name}</h4>
-                <p class="mb-0">${this.lastAccessedDate}</p>
+                <p class="mb-0">${this.createAtFormulate}</p>
             </div>
             <p class="mb-0 mt-2 text-truncate">${this.body}</p>
         </div>`
@@ -28,7 +29,7 @@ export class Jot {
         return `<div class="mt-3">
             <div style="height: 5px; background-color: ${this.color};"></div>
             <h2>${this.name}</h2>
-            <p>Date Created on: <span>${this.lastAccessedDate}</span> </p>
+            <p>Date Created on: <span>${this.createAtFormulate}</span> </p>
             <p>Last updated: <span>${this.lastAccessedFullDateAndTime}</span></p>
             <div class="d-flex justify-content-end">
               <img src="path/to/your/delete-icon.png" onclick="app.JotsController.deleteJot('${this.id}')" class="action mx-3" alt="Delete" style="width: 24px; height: 24px;">
@@ -43,8 +44,8 @@ export class Jot {
     }
 
     // NOTE get function of the date 
-    get lastAccessedDate() {
-        return this.lastAccessedAt.toLocaleDateString()
+    get createAtFormulate() {
+        return this.createAt.toLocaleDateString()
     }
 
     // NOTE get function of the date and time

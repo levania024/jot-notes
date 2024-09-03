@@ -29,7 +29,7 @@ class JotsService {
     updateJot(jotId, updatedData) {
         const jotIndex = AppState.jotNote.findIndex(jot => jot.id == jotId)
         if (jotIndex !== -1) {
-            AppState.jotNote[jotIndex] = new Jot({ ...AppState.jotNote[jotIndex], ...updatedData, updatedAt: new Date() })
+            AppState.jotNote[jotIndex] = new Jot({ ...AppState.jotNote[jotIndex], ...updatedData, lastAccessedAt: new Date() })
             AppState.emit('jotNote')
             if (AppState.activeJotNote && AppState.activeJotNote.id == jotId) {
                 AppState.activeJotNote = AppState.jotNote[jotIndex]

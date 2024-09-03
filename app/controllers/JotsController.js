@@ -33,7 +33,7 @@ export class JotsController {
             setHTML('Jot-created-Note', `
                 <div class="mt-3" style="border-left: 5px solid ${Jot.color}; padding-left: 10px;">
                     <h2>${Jot.name}</h2>
-                    <p>Date Created on: <span>${new Date(Jot.lastAccessedDate).toLocaleDateString()}</span></p>
+                    <p>Date Created on: <span>${new Date(Jot.createAtFormulate).toLocaleDateString()}</span></p>
                     <p>Last updated: <span>${new Date(Jot.lastAccessedFullDateAndTime).toLocaleString()}</span></p>
                     <div class="d-flex justify-content-end mb-3">
                         <button class="btn btn-danger mx-3" onclick="app.JotsController.deleteJot('${Jot.id}')"><i class="mdi mdi-delete"></i> Delete</button>
